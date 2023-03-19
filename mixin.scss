@@ -1,0 +1,54 @@
+$default-font-size: 1rem;
+
+@mixin article-style($color, $border-color, $font-size:20 $default-font-size) {
+  color: $color;
+  border: 1px solid $border-color;
+  font-size: $font-size;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid darkred;
+  background-color: white;
+}
+
+.main-box {
+  padding: 20px;
+  text-align: center;
+}
+
+.title {
+  color: green;
+  text-decoration: underline blue;
+  @include article-style(green, transparent);
+}
+
+.sub-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+
+  .sub-box {
+    width: 23%;
+    padding: 20px;
+    @include article-style(blue, green);
+  }
+
+  .sub-box-b, .sub-box-d {
+    @include article-style(red, green);
+  }
+
+  .sub-box-a, .sub-box-c {
+    @include article-style(blue, green);
+  }
+}
+
+.bottom-box {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid blue;
+  background-color: white;
+  color: green;
+  font-size: 24px;
+}
